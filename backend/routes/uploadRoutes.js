@@ -1,45 +1,27 @@
-import cloudinary from "../config/cloudinary.js"
 import express from "express"
 import multer from "multer"
-
+import path from "path"
 
 const router = express.Router()
 
-const storage = multer.diskStorage({})
+const storage = multer.diskStorage({
+  destination(req, file, cb) {
+    cb(null, "uploads/")
+  },
+  filename(req, file, cb) {
+    cb(
+      null,
+      `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`
+    )
+  },
+})
 
 const upload = multer({ storage })
 
-router.post(
-  "/",
-  upload.single("image"),
-  async (req, res) => {
-
-    try {
-
-      console.log(req.file)
-
-      const result = await cloudinary.uploader.upload(
-        req.file.path,
-        {
-          folder: "shahidarbar",
-        }
-      )
-
-      res.json({
-        imageUrl: result.secure_url,
-      })
-
-    } catch (error) {
-
-      console.log(error)
-
-      res.status(500).json({
-        message: error.message,
-      })
-
-    }
-
-  }
-)
+router.post("/", upload.single("image"), (req, res) => {
+  res.json({
+    imageUrl: `http://localhost:5000/uploads/${req.file.filename}`,
+  })
+})
 
 export default router

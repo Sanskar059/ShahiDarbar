@@ -264,7 +264,7 @@ function Checkout() {
 
       <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-lg p-10">
 
-        <h1 className="text-5xl font-bold text-green-700 mb-12 text-center">
+        <h1 className="text-5xl font-bold text-luxury-gold mb-12 text-center">
 
           Checkout
 
@@ -319,7 +319,7 @@ function Checkout() {
 
               </div>
 
-              <h2 className="text-2xl font-bold text-green-700">
+              <h2 className="text-2xl font-bold text-luxury-gold">
 
                 ₹{item.price * item.quantity}
 
@@ -485,7 +485,7 @@ function Checkout() {
 
           </h2>
 
-          <h2 className="text-4xl font-bold text-green-700">
+          <h2 className="text-4xl font-bold text-luxury-gold">
 
             ₹{finalAmount}
 
@@ -519,7 +519,7 @@ function Checkout() {
         <button
           onClick={handlePayment}
           disabled={loading}
-          className="w-full bg-green-600 text-white py-5 rounded-2xl text-2xl font-bold hover:bg-green-700"
+          className="w-full bg-primary text-white py-5 rounded-2xl text-2xl font-bold hover:bg-primary/90"
         >
 
           Pay Now
@@ -534,3 +534,5 @@ function Checkout() {
 }
 
 export default Checkout
+
+

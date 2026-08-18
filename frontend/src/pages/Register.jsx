@@ -33,6 +33,8 @@ function Register() {
         JSON.stringify(data)
       )
 
+      document.cookie = `userInfo=${encodeURIComponent(JSON.stringify(data))}; path=/; max-age=604800`
+
       alert("Registration Successful")
 
       navigate("/")
@@ -56,7 +58,7 @@ function Register() {
 
       <div className="bg-white p-10 rounded-3xl shadow-lg w-full max-w-md">
 
-        <h1 className="text-4xl font-bold text-center text-green-700 mb-10">
+        <h1 className="text-4xl font-bold text-center text-luxury-gold mb-10">
 
           Register
 
@@ -110,7 +112,7 @@ function Register() {
 
           <button
             type="submit"
-            className="w-full bg-green-600 text-white py-4 rounded-2xl text-xl font-bold hover:bg-green-700"
+            className="w-full bg-primary text-white py-4 rounded-2xl text-xl font-bold hover:bg-primary/90"
           >
 
             Register
@@ -127,7 +129,7 @@ function Register() {
 
           <Link
             to="/login"
-            className="text-green-700 font-bold ml-2"
+            className="text-luxury-gold font-bold ml-2"
           >
             Login
           </Link>
@@ -142,3 +144,5 @@ function Register() {
 }
 
 export default Register
+
+

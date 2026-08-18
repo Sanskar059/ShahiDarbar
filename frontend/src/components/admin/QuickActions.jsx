@@ -43,15 +43,15 @@ import {
             className="
               p-6
               rounded-3xl
-              bg-green-50
-              hover:bg-green-100
+              bg-surface-container-low
+              hover:bg-surface-container
               text-left
             "
           >
             <Package
               size={40}
               className="
-                text-green-600
+                text-luxury-gold
                 mb-4
               "
             />
@@ -116,3 +116,5 @@ import {
   }
   
   export default QuickActions;
+
+

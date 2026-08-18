@@ -149,3 +149,5 @@ const decreaseQuantity = (id) => {
 
 export const useCart = () =>
   useContext(CartContext)
+
+

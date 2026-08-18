@@ -25,7 +25,7 @@ import {
           className="
             text-3xl
             font-bold
-            text-green-700
+            text-luxury-gold
             mb-12
           "
         >
@@ -48,7 +48,7 @@ import {
               transition
               ${
                 isActive
-                  ? "bg-green-600 text-white"
+                  ? "bg-primary text-white"
                   : "hover:bg-gray-100"
               }
             `
@@ -71,7 +71,7 @@ import {
               transition
               ${
                 isActive
-                  ? "bg-green-600 text-white"
+                  ? "bg-primary text-white"
                   : "hover:bg-gray-100"
               }
             `
@@ -94,7 +94,7 @@ import {
               transition
               ${
                 isActive
-                  ? "bg-green-600 text-white"
+                  ? "bg-primary text-white"
                   : "hover:bg-gray-100"
               }
             `
@@ -135,3 +135,5 @@ import {
   }
   
   export default AdminSidebar;
+
+

@@ -329,7 +329,7 @@ function AdminProducts() {
             setShowModal(true);
           }}
           className="
-            bg-green-600
+            bg-primary
             text-white
             px-6
             rounded-2xl
@@ -661,12 +661,12 @@ function AdminProducts() {
                 }
                 className="
                   md:col-span-2
-                  bg-green-600
+                  bg-primary
                   text-white
                   py-4
                   rounded-xl
                   font-bold
-                  hover:bg-green-700
+                  hover:bg-primary/90
                 "
               >
                 {loading
@@ -684,3 +684,5 @@ function AdminProducts() {
 }
 
 export default AdminProducts;
+
+

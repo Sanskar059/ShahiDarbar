@@ -62,7 +62,7 @@ function DashboardCards({
           <h1 className="
             text-5xl
             font-bold
-            text-green-600
+            text-luxury-gold
             mt-3
           ">
             ₹{totalRevenue}
@@ -114,3 +114,5 @@ function DashboardCards({
   }
   
   export default DashboardCards;
+
+

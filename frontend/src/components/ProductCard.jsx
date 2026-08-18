@@ -22,7 +22,7 @@ function ProductCard({ id, name, price, image }) {
           {name}
         </h3>
 
-        <p className="text-green-700 text-xl font-bold mt-2">
+        <p className="text-luxury-gold text-xl font-bold mt-2">
           ₹{price}
         </p>
 
@@ -37,13 +37,13 @@ function ProductCard({ id, name, price, image }) {
                 image,
               })
             }
-            className="flex-1 bg-green-600 text-white py-3 rounded-lg hover:bg-green-700"
+            className="flex-1 bg-primary text-white py-3 rounded-lg hover:bg-primary/90"
           >
             Add To Cart
           </button>
 
           <Link to={`/product/${id}`} className="flex-1">
-            <button className="w-full border border-green-600 text-green-700 py-3 rounded-lg hover:bg-green-50">
+            <button className="w-full border border-orange-600 text-luxury-gold py-3 rounded-lg hover:bg-surface-container-low">
               View
             </button>
           </Link>
@@ -56,3 +56,5 @@ function ProductCard({ id, name, price, image }) {
 }
 
 export default ProductCard
+
+

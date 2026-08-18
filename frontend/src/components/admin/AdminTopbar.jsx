@@ -30,14 +30,14 @@ function AdminTopbar() {
           </h1>
   
           <p className="text-gray-500">
-            Manage your grocery business.
+            Manage your food business.
           </p>
         </div>
   
         <div
           className="
-            bg-green-100
-            text-green-700
+            bg-surface-container-high
+            text-luxury-gold
             px-6
             py-3
             rounded-full
@@ -51,3 +51,5 @@ function AdminTopbar() {
   }
   
   export default AdminTopbar;
+
+

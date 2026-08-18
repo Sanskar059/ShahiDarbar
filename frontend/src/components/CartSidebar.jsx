@@ -140,7 +140,7 @@ function CartSidebar() {
 
                   </h3>
 
-                  <p className="text-green-700 font-bold mt-1">
+                  <p className="text-luxury-gold font-bold mt-1">
 
                     ₹{item.price}
 
@@ -187,9 +187,9 @@ function CartSidebar() {
                       className="
                         w-8 h-8
                         rounded-full
-                        bg-green-600
+                        bg-primary
                         text-white
-                        hover:bg-green-700
+                        hover:bg-primary/90
                         font-bold
                         transition
                       "
@@ -229,7 +229,7 @@ function CartSidebar() {
 
             <span>Total:</span>
 
-            <span className="text-green-700">
+            <span className="text-luxury-gold">
 
               ₹{totalPrice}
 
@@ -244,10 +244,10 @@ function CartSidebar() {
             }
             className="
               block text-center
-              bg-green-600 text-white
+              bg-primary text-white
               py-4 rounded-2xl
               text-xl font-bold
-              hover:bg-green-700
+              hover:bg-primary/90
               transition
             "
           >
@@ -266,3 +266,5 @@ function CartSidebar() {
 }
 
 export default CartSidebar
+
+

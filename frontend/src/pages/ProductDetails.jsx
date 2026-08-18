@@ -120,18 +120,18 @@ function ProductDetails() {
 
   return (
 
-    <div className="bg-gray-50 min-h-screen px-6 py-16">
+    <div className="bg-surface-container-lowest min-h-screen px-6 py-24">
 
-      <div className="max-w-7xl mx-auto bg-white rounded-3xl shadow-lg p-10 grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
 
         {/* IMAGE */}
 
-        <div>
+        <div className="aspect-square relative overflow-hidden bg-surface-container-high border border-outline-variant rounded-xl group">
 
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-[500px] object-cover rounded-3xl"
+            className="absolute inset-0 w-full h-full object-cover  transition-transform duration-700 group-hover:scale-105"
           />
 
         </div>
@@ -140,75 +140,53 @@ function ProductDetails() {
 
         <div className="flex flex-col justify-center">
 
-          <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full w-fit font-semibold mb-5">
-
-            {product.category}
-
+          <span className="text-sm font-semibold text-on-surface-variant uppercase tracking-widest mb-4">
+            [ {product.category} ]
           </span>
 
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex justify-between items-start mb-6">
 
-            <h1 className="text-5xl font-bold">
-
+            <h1 className="text-4xl md:text-6xl font-bold text-on-surface uppercase tracking-tighter">
               {product.name}
-
             </h1>
 
             <button
-              onClick={() =>
-                addToWishlist(product)
-              }
-              className="
-      text-5xl
-      hover:scale-125
-      transition
-    "
+              onClick={() => addToWishlist(product)}
+              className="text-4xl opacity-70 hover:opacity-100 hover:scale-125 transition ml-4"
             >
-
               ❤️
-
             </button>
 
           </div>
 
-          <p className="text-gray-600 text-lg leading-8 mb-8">
-
+          <p className="text-on-surface-variant text-lg leading-8 mb-8 max-w-xl">
             {product.description}
-
           </p>
+          
+          <div className="w-full h-[1px] bg-outline-variant mb-8"></div>
 
-          <h2 className="text-4xl font-bold text-green-700 mb-8">
-
+          <h2 className="text-4xl font-bold text-on-surface mb-8">
             ₹{product.price}
-
           </h2>
 
           {/* QUANTITY */}
 
           <div className="flex items-center gap-5 mb-10">
 
-            <p className="text-xl font-semibold">
+            <p className="text-sm font-bold uppercase tracking-widest text-on-surface">
               Quantity:
             </p>
 
             <select
               value={quantity}
-              onChange={(e) =>
-                setQuantity(
-                  Number(e.target.value)
-                )
-              }
-              className="border px-4 py-3 rounded-xl"
+              onChange={(e) => setQuantity(Number(e.target.value))}
+              className="border border-outline-variant bg-surface-container-lowest text-on-surface uppercase font-bold px-4 py-3 outline-none focus:border-luxury-gold"
             >
-
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((qty) => (
-
                 <option key={qty} value={qty}>
                   {qty}
                 </option>
-
               ))}
-
             </select>
 
           </div>
@@ -217,11 +195,9 @@ function ProductDetails() {
 
           <button
             onClick={addToCart}
-            className="bg-green-600 text-white py-5 rounded-2xl text-2xl font-bold hover:bg-green-700"
+            className="bg-luxury-gold text-primary py-5 px-12 rounded-full text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-opacity w-fit"
           >
-
             Add To Cart
-
           </button>
 
         </div>
@@ -234,3 +210,6 @@ function ProductDetails() {
 }
 
 export default ProductDetails
+
+
+

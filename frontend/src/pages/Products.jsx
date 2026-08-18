@@ -143,34 +143,34 @@ function Products() {
 
   return (
 
-    <div className="bg-gray-50 min-h-screen px-6 py-16">
+    <div className="bg-surface-container-lowest min-h-screen px-6 py-24">
 
       {/* HEADER */}
 
-      <div className="text-center mb-14">
-
-        <h1 className="text-5xl font-bold text-green-700 mb-5">
-          Explore Products
+      <div className="text-center mb-16">
+        <span className="text-sm font-semibold text-on-surface-variant uppercase tracking-widest"></span>
+        <h1 className="text-5xl font-bold text-on-surface uppercase tracking-tighter mt-2">
+          Explore Menus
         </h1>
 
-        <p className="text-xl text-gray-600">
-          Find premium grocery and wholesale products.
+        <p className="text-xl text-on-surface-variant mt-4">
+          Curated selection of premium culinary experiences.
         </p>
 
       </div>
 
       {/* SEARCH */}
 
-      <div className="max-w-2xl mx-auto mb-10">
-
+      <div className="max-w-[800px] mx-auto mb-16 relative">
+        <span className="absolute left-6 top-1/2 -translate-y-1/2 text-outline-variant">🔍</span>
         <input
           type="text"
-          placeholder="Search Products..."
+          placeholder="SEARCH PRODUCTS..."
           value={search}
           onChange={(e) =>
             setSearch(e.target.value)
           }
-          className="w-full p-5 rounded-2xl border outline-none"
+          className="w-full p-5 pl-14 rounded-full border border-outline-variant bg-surface-container-low text-on-surface uppercase font-bold outline-none focus:border-luxury-gold focus:ring-4 focus:ring-surface-container transition-all"
         />
 
       </div>
@@ -186,9 +186,9 @@ function Products() {
             onClick={() =>
               setSelectedCategory(category)
             }
-            className={`px-6 py-3 rounded-2xl font-semibold transition ${selectedCategory === category
-                ? "bg-green-600 text-white"
-                : "bg-white border"
+            className={`px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all border ${selectedCategory === category
+                ? "bg-primary text-on-primary border-primary"
+                : "bg-surface-container-lowest text-on-surface border-outline-variant hover:border-on-surface"
               }`}
           >
 
@@ -202,82 +202,72 @@ function Products() {
 
       {/* PRODUCTS GRID */}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
         {filteredProducts.map((product) => (
 
           <div
             key={product._id}
-            className="bg-white rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+            className="group relative flex flex-col bg-surface-container-lowest hover:-translate-y-2 transition-transform duration-500"
           >
 
             {/* IMAGE */}
 
-            <Link to={`/product/${product._id}`}>
+            <Link to={`/product/${product._id}`} className="aspect-[3/4] relative overflow-hidden bg-surface-container-high border border-outline-variant">
 
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-64 object-cover"
+                className="absolute inset-0 w-full h-full object-cover  transition-transform duration-700 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <button
+                onClick={(e) => {
+                  e.preventDefault()
+                  addToWishlist(product)
+                }}
+                className="absolute top-4 right-4 z-10 text-2xl opacity-0 group-hover:opacity-100 transition-opacity hover:scale-125"
+              >
+                ❤️
+              </button>
 
             </Link>
 
             {/* CONTENT */}
 
-            <div className="p-6">
+            <div className="py-6 flex flex-col gap-2">
 
-              <div className="flex justify-end mb-3">
+              <span className="text-xs font-semibold text-on-surface-variant uppercase tracking-widest">
+                {product.category}
+              </span>
 
-                <button
-                  onClick={() =>
-                    addToWishlist(product)
-                  }
-                  className="
-    text-3xl
-    hover:scale-125
-    transition
-  "
-                >
+              <div className="flex justify-between items-start gap-4">
 
-                  ❤️
-
-                </button>
-
-              </div>
-
-              <div className="flex justify-between items-center mb-4">
-
-                <h2 className="text-2xl font-bold">
+                <h2 className="text-lg font-bold text-on-surface uppercase group-hover:text-luxury-gold transition-colors">
                   {product.name}
                 </h2>
 
-                <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
-                  {product.category}
-                </span>
-
-              </div>
-
-              <p className="text-gray-600 mb-5 line-clamp-2">
-                {product.description}
-              </p>
-
-              <div className="flex justify-between items-center">
-
-                <p className="text-2xl font-bold text-green-700">
+                <p className="text-lg font-bold text-on-surface">
                   ₹{product.price}
                 </p>
 
-                <button
-                  onClick={(e) =>
-                    addToCart(e, product)
-                  }
-                  className="bg-green-600 text-white px-5 py-3 rounded-xl hover:bg-green-700"
-                >
-                  Add To Cart
-                </button>
-
               </div>
+
+              <p className="text-sm text-outline-variant line-clamp-1">
+                {product.description}
+              </p>
+
+              <div className="w-full h-[1px] bg-outline-variant mt-4 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500"></div>
+
+              <button
+                onClick={(e) =>
+                  addToCart(e, product)
+                }
+                className="mt-4 text-xs font-bold uppercase tracking-widest text-primary bg-luxury-gold px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity text-center hover:bg-surface-container-highest hover:text-on-surface"
+              >
+                Add To Cart
+              </button>
 
             </div>
 
@@ -293,3 +283,6 @@ function Products() {
 }
 
 export default Products
+
+
+

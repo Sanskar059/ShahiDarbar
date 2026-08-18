@@ -34,7 +34,7 @@ function Cart() {
 
       <div className="max-w-7xl mx-auto">
 
-        <h1 className="text-5xl font-bold text-green-700 mb-14">
+        <h1 className="text-5xl font-bold text-luxury-gold mb-14">
 
           Shopping Cart
 
@@ -66,9 +66,9 @@ function Cart() {
                 navigate("/products")
               }
               className="
-                bg-green-600 text-white
+                bg-primary text-white
                 px-8 py-4 rounded-2xl
-                text-xl hover:bg-green-700
+                text-xl hover:bg-primary/90
               "
             >
 
@@ -132,7 +132,7 @@ function Cart() {
                     <p
                       className="
                         text-2xl font-bold
-                        text-green-700 mb-4
+                        text-luxury-gold mb-4
                       "
                     >
 
@@ -186,9 +186,9 @@ function Cart() {
                         className="
                           w-10 h-10
                           rounded-full
-                          bg-green-600
+                          bg-primary
                           text-white
-                          hover:bg-green-700
+                          hover:bg-primary/90
                           text-xl font-bold
                         "
                       >
@@ -238,7 +238,7 @@ function Cart() {
 
                 <span>Total:</span>
 
-                <span className="text-green-700">
+                <span className="text-luxury-gold">
 
                   ₹{totalPrice}
 
@@ -251,10 +251,10 @@ function Cart() {
                   navigate("/checkout")
                 }
                 className="
-                  w-full bg-green-600
+                  w-full bg-primary
                   text-white py-5
                   rounded-2xl text-xl
-                  font-bold hover:bg-green-700
+                  font-bold hover:bg-primary/90
                 "
               >
 
@@ -276,3 +276,5 @@ function Cart() {
 }
 
 export default Cart
+
+

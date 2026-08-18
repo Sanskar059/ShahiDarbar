@@ -1,62 +1,36 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
-    return (
-      <footer className="bg-green-700 text-white px-10 py-12">
-  
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-  
-          {/* Brand */}
-          <div>
-            <h1 className="text-3xl font-bold">
-              ShahiDarbar
-            </h1>
-  
-            <p className="mt-4 text-green-100">
-              Fresh groceries and wholesale products delivered
-              at the best prices.
-            </p>
-          </div>
-  
-          {/* Links */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">
-              Quick Links
-            </h2>
-  
-            <ul className="space-y-2 text-green-100">
-              <li className="hover:text-white cursor-pointer">Home</li>
-              <li className="hover:text-white cursor-pointer">Products</li>
-              <li className="hover:text-white cursor-pointer">Wholesale</li>
-              <li className="hover:text-white cursor-pointer">Contact</li>
-            </ul>
-          </div>
-  
-          {/* Contact */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">
-              Contact
-            </h2>
-  
-            <p className="text-green-100">
-              Hata Bazar, Shivpur, Gorakhpur
-            </p>
-  
-            <p className="text-green-100 mt-2">
-              support@shahidarbar.com
-            </p>
-  
-            <p className="text-green-100 mt-2">
-              +91 9876543210
-            </p>
-          </div>
-  
+  return (
+    <footer className="w-full border-t border-surface-container-highest bg-surface-container-lowest mt-16">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-12 flex flex-col md:flex-row justify-between items-start gap-8">
+        <div className="max-w-xs flex flex-col gap-4">
+          <h1 className="text-2xl font-bold text-on-surface uppercase tracking-tighter">
+            Shahi<span className="text-luxury-gold italic font-normal">Darbar</span>
+          </h1>
+          <p className="text-sm font-semibold text-on-surface-variant uppercase tracking-widest">
+            Curated culinary experiences delivered with precision.
+          </p>
         </div>
-  
-        <div className="border-t border-green-500 mt-10 pt-5 text-center text-green-100">
-          © 2026 ShahiDarbar. All rights reserved.
+        <div className="flex gap-16">
+          <div className="flex flex-col gap-4">
+            <span className="text-sm font-bold text-on-surface uppercase tracking-widest">Company</span>
+            <Link to="/" className="text-sm font-semibold text-on-surface-variant hover:text-on-surface uppercase tracking-widest">About</Link>
+            <Link to="/" className="text-sm font-semibold text-on-surface-variant hover:text-on-surface uppercase tracking-widest">Careers</Link>
+          </div>
+          <div className="flex flex-col gap-4">
+            <span className="text-sm font-bold text-on-surface uppercase tracking-widest">Support</span>
+            <Link to="/" className="text-sm font-semibold text-on-surface-variant hover:text-on-surface uppercase tracking-widest">Help Center</Link>
+            <Link to="/" className="text-sm font-semibold text-on-surface-variant hover:text-on-surface uppercase tracking-widest">Contact</Link>
+          </div>
         </div>
-  
-      </footer>
-    )
-  }
-  
-  export default Footer
+      </div>
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-6 border-t border-surface-container-highest text-center text-sm font-semibold text-on-surface-variant uppercase tracking-widest">
+        © 2026 Shahi Darbar. All rights reserved.
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;
+

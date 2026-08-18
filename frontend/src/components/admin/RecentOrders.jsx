@@ -36,7 +36,7 @@ function RecentOrders({
             )
           }
           className="
-            text-green-600
+            text-luxury-gold
             font-bold
           "
         >
@@ -103,3 +103,5 @@ function RecentOrders({
 }
 
 export default RecentOrders;
+
+

@@ -29,7 +29,7 @@ const products = [
 
 function FeaturedProducts() {
   return (
-    <section className="px-10 py-16 bg-green-50">
+    <section className="px-10 py-16 bg-surface-container-low">
 
       <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
         Featured Products
@@ -53,3 +53,5 @@ function FeaturedProducts() {
 }
 
 export default FeaturedProducts
+
+

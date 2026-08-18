@@ -44,7 +44,7 @@ const categories = [
               />
   
               <div className="p-5 bg-white">
-                <h3 className="text-2xl font-semibold text-center text-green-700">
+                <h3 className="text-2xl font-semibold text-center text-luxury-gold">
                   {category.name}
                 </h3>
               </div>
@@ -59,3 +59,5 @@ const categories = [
   }
   
   export default Categories
+
+

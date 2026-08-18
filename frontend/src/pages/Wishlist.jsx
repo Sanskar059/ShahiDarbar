@@ -190,7 +190,7 @@ function Wishlist() {
 
                   <p
                     className="
-                      text-green-700
+                      text-luxury-gold
                       text-2xl font-bold
                       mb-6
                     "
@@ -205,11 +205,11 @@ function Wishlist() {
                       moveToCart(product)
                     }
                     className="
-                      w-full bg-green-600
+                      w-full bg-primary
                       text-white py-4
                       rounded-2xl
                       text-xl font-bold
-                      hover:bg-green-700
+                      hover:bg-primary/90
                       transition
                     "
                   >
@@ -236,3 +236,5 @@ function Wishlist() {
 }
 
 export default Wishlist
+
+

@@ -31,6 +31,8 @@ function Login() {
         JSON.stringify(data)
       )
 
+      document.cookie = `userInfo=${encodeURIComponent(JSON.stringify(data))}; path=/; max-age=604800`
+
       alert("Login Successful")
 
       navigate("/")
@@ -54,7 +56,7 @@ function Login() {
 
       <div className="bg-white p-10 rounded-3xl shadow-lg w-full max-w-md">
 
-        <h1 className="text-4xl font-bold text-center text-green-700 mb-10">
+        <h1 className="text-4xl font-bold text-center text-luxury-gold mb-10">
 
           Login
 
@@ -95,7 +97,7 @@ function Login() {
 
           <button
             type="submit"
-            className="w-full bg-green-600 text-white py-4 rounded-2xl text-xl font-bold hover:bg-green-700"
+            className="w-full bg-primary text-white py-4 rounded-2xl text-xl font-bold hover:bg-primary/90"
           >
 
             Login
@@ -112,7 +114,7 @@ function Login() {
 
           <Link
             to="/register"
-            className="text-green-700 font-bold ml-2"
+            className="text-luxury-gold font-bold ml-2"
           >
             Register
           </Link>
@@ -127,3 +129,5 @@ function Login() {
 }
 
 export default Login
+
+

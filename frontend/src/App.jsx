@@ -50,17 +50,29 @@ function LayoutWrapper() {
 
         <Route
           path="/"
-          element={<Home />}
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
         />
 
         <Route
           path="/products"
-          element={<Products />}
+          element={
+            <ProtectedRoute>
+              <Products />
+            </ProtectedRoute>
+          }
         />
 
         <Route
           path="/product/:id"
-          element={<ProductDetails />}
+          element={
+            <ProtectedRoute>
+              <ProductDetails />
+            </ProtectedRoute>
+          }
         />
 
         <Route
@@ -149,3 +161,5 @@ function App() {
 }
 
 export default App;
+
+

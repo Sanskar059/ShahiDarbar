@@ -75,7 +75,7 @@ const AdminOrders = () => {
   if (loading) {
     return (
       <div className="p-6">
-        <h1 className="text-3xl font-bold text-green-700">
+        <h1 className="text-3xl font-bold text-luxury-gold">
           Loading Orders...
         </h1>
       </div>
@@ -84,7 +84,7 @@ const AdminOrders = () => {
 
   return (
     <div className="p-6 min-h-screen bg-gray-50">
-      <h1 className="text-4xl font-bold text-green-700 mb-8">
+      <h1 className="text-4xl font-bold text-luxury-gold mb-8">
         Orders Management
       </h1>
 
@@ -163,7 +163,7 @@ const AdminOrders = () => {
                       📍 {address}
                     </p>
 
-                    <p className="mt-4 text-2xl font-bold text-green-700">
+                    <p className="mt-4 text-2xl font-bold text-luxury-gold">
                       ₹{amount}
                     </p>
 
@@ -173,7 +173,7 @@ const AdminOrders = () => {
                           px-3 py-1 rounded-full text-sm font-semibold
                           ${
                             payment === "Paid"
-                              ? "bg-green-100 text-green-700"
+                              ? "bg-surface-container-high text-luxury-gold"
                               : "bg-red-100 text-red-700"
                           }
                         `}
@@ -257,7 +257,7 @@ const AdminOrders = () => {
                               {item.quantity}
                             </p>
 
-                            <p className="font-semibold text-green-700">
+                            <p className="font-semibold text-luxury-gold">
                               ₹{item.price}
                             </p>
                           </div>
@@ -276,3 +276,5 @@ const AdminOrders = () => {
 };
 
 export default AdminOrders;
+
+
