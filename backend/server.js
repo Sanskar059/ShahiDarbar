@@ -21,6 +21,7 @@ app.use(
   cors({
     origin: [
       "https://shahi-darbar-one.vercel.app",
+      "https://shahidarbar-2.onrender.com",
       "http://localhost:5173",
     ],
     credentials: true,

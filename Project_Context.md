@@ -33,7 +33,7 @@ Shahi Darbar is a MERN-based local grocery + wholesale e-commerce application in
 
 ## Live Website
 
-* **Frontend:** https://shahi-darbar-one.vercel.app
+* **Frontend:** https://shahidarbar-2.onrender.com
 * **Backend:** https://shahidarbar-u81i.onrender.com
 
 ---
