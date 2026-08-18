@@ -87,9 +87,8 @@ function MyOrders() {
                     <div className="text-left md:text-right">
                       <p className="text-3xl font-bold text-on-surface">₹{amount}</p>
                       <div className="flex gap-3 mt-2 flex-wrap">
-                        <span className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border ${
-                          payment === "Paid" ? "bg-luxury-gold text-primary border-luxury-gold" : "bg-error-container text-on-error-container border-error"
-                        }`}>
+                        <span className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border ${payment === "Paid" ? "bg-luxury-gold text-primary border-luxury-gold" : "bg-error-container text-on-error-container border-error"
+                          }`}>
                           {payment}
                         </span>
                       </div>
@@ -101,10 +100,10 @@ function MyOrders() {
                     <div className="flex items-center justify-between relative min-w-[500px]">
                       {/* Background Line */}
                       <div className="absolute top-1/2 left-0 w-full h-[2px] bg-surface-container-high -translate-y-1/2 z-0"></div>
-                      
+
                       {/* Progress Line */}
-                      <div 
-                        className="absolute top-1/2 left-0 h-[2px] bg-luxury-gold -translate-y-1/2 z-0 transition-all duration-1000" 
+                      <div
+                        className="absolute top-1/2 left-0 h-[2px] bg-luxury-gold -translate-y-1/2 z-0 transition-all duration-1000"
                         style={{ width: `${((currentStep - 1) / 3) * 100}%` }}
                       ></div>
 
@@ -115,11 +114,10 @@ function MyOrders() {
                         { step: 4, label: "Delivered" }
                       ].map((item) => (
                         <div key={item.step} className="relative z-10 flex flex-col items-center gap-3 bg-surface-container-lowest px-2">
-                          <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-colors duration-500 border-2 ${
-                            currentStep > item.step ? "bg-luxury-gold border-luxury-gold text-primary" : 
-                            currentStep === item.step ? "bg-primary text-luxury-gold border-primary ring-4 ring-luxury-gold/30" : 
-                            "bg-surface-container-lowest border-outline-variant text-outline-variant"
-                          }`}>
+                          <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-colors duration-500 border-2 ${currentStep > item.step ? "bg-luxury-gold border-luxury-gold text-primary" :
+                              currentStep === item.step ? "bg-primary text-luxury-gold border-primary ring-4 ring-luxury-gold/30" :
+                                "bg-surface-container-lowest border-outline-variant text-outline-variant"
+                            }`}>
                             {currentStep > item.step ? "✓" : item.step}
                           </div>
                           <span className={`text-xs font-bold uppercase tracking-widest whitespace-nowrap ${currentStep >= item.step ? "text-on-surface" : "text-outline-variant"}`}>
